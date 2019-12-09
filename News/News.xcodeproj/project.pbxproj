@@ -15,6 +15,7 @@
 		CFA8BA9D239E687C002247EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA8BA9B239E687C002247EE /* LaunchScreen.storyboard */; };
 		CFA8BAA5239E6C35002247EE /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAA4239E6C35002247EE /* NewsTableViewCell.swift */; };
 		CFA8BAA7239E77B1002247EE /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAA6239E77B1002247EE /* NewsViewController.swift */; };
+		CFA8BAAA239E85A5002247EE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAA9239E85A4002247EE /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CFA8BA9E239E687C002247EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFA8BAA4239E6C35002247EE /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		CFA8BAA6239E77B1002247EE /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		CFA8BAA9239E85A4002247EE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				CFA8BA90239E6879002247EE /* AppDelegate.swift */,
+				CFA8BAA9239E85A4002247EE /* NetworkManager.swift */,
 				CFA8BA92239E6879002247EE /* SceneDelegate.swift */,
 				CFA8BA96239E6879002247EE /* Main.storyboard */,
 				CFA8BAA8239E7A0C002247EE /* NewsList */,
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA8BAAA239E85A5002247EE /* NetworkManager.swift in Sources */,
 				CFA8BA95239E6879002247EE /* ViewController.swift in Sources */,
 				CFA8BA91239E6879002247EE /* AppDelegate.swift in Sources */,
 				CFA8BAA5239E6C35002247EE /* NewsTableViewCell.swift in Sources */,
