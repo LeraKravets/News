@@ -17,7 +17,7 @@ class NetworkManager {
     private init() {}
 
     func downloadNewsInfo(completionHandler: @escaping ([String: Any]?) -> Void) {
-        let resourceString = "https://newsapi.org/v2/top-headlines?language=\(language)&apiKey=\(APIkey)"
+        let resourceString = "https://newsapi.org/v2/top-headlines?language=\(language)&pageSize=80&apiKey=\(APIkey)"
         guard let resourceURL = URL(string: resourceString) else {
                       completionHandler(nil)
                       return

@@ -31,28 +31,39 @@ class CoreDataManager {
 
     // MARK: - Core Data Saving method
     func saveNewsInfo(newsInfo: [String: Any]) {
-        var newsArray: [News] = []
+//        var newsArray: [News] = []
 
         guard let newsInfoArray = newsInfo["articles"] as? [[String: Any]] else { return }
 
         for item in newsInfoArray {
-            guard let news = NSEntityDescription.insertNewObject(forEntityName: "News", into: context) as? News,
+            var news: News?
 
-            let title = item["title"] as? String,
-            let date = item["publishedAt"] as? String,
-            let description = item["description"] as? String,
-            let imageUrl = item["urlToImage"] as? String,
-            let linkUrl = item["url"] as? String else { return }
+            guard let title = item["title"] as? String else { return }
+            let date = item["publishedAt"] as? String
+            let description = item["description"] as? String
+            let imageUrl = item["urlToImage"] as? String
+            let linkUrl = item["url"] as? String
 
-            news.title = title
-            news.date = date
-            news.descript = description
-            news.image = imageUrl
-            news.link = linkUrl
-            newsArray.append(news)
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+            request.predicate = NSPredicate(format: "title = %@", title)
+            do {
+                let newsList = try? context.fetch(request) as? [News]
+                news = newsList?.first
+            }
+
+            if news == nil {
+                news = NSEntityDescription.insertNewObject(forEntityName: "News", into: context) as? News
+            }
+
+            news?.title = title
+            news?.date = date
+            news?.descript = description
+            news?.image = imageUrl
+            news?.link = linkUrl
+//            newsArray.append(news)
             saveContext()
         }
-        print(newsArray)
+//        print(newsArray)
 
     }
 
@@ -71,7 +82,7 @@ class CoreDataManager {
 
     // MARK: - Core Data Fetching method
     func fetchNewsInfo() -> [News] {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CurrentWeather")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
         do {
             let item = try context.fetch(fetchRequest) as? [News]
             return item ?? []

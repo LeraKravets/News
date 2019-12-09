@@ -20,6 +20,7 @@
 		CFA8BAC8239EA592002247EE /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAC6239EA592002247EE /* News+CoreDataClass.swift */; };
 		CFA8BAC9239EA592002247EE /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAC7239EA592002247EE /* News+CoreDataProperties.swift */; };
 		CFA8BACE239EAEC6002247EE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BACD239EAEC6002247EE /* CoreDataManager.swift */; };
+		CFD6BC35239EC32100971491 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6BC34239EC32100971491 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		CFA8BAC6239EA592002247EE /* News+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CFA8BAC7239EA592002247EE /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CFA8BACD239EAEC6002247EE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CFD6BC34239EC32100971491 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				CFA8BAA9239E85A4002247EE /* NetworkManager.swift */,
 				CFA8BACD239EAEC6002247EE /* CoreDataManager.swift */,
+				CFD6BC34239EC32100971491 /* DateFormatter.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				CFA8BA91239E6879002247EE /* AppDelegate.swift in Sources */,
 				CFA8BAAD239E9459002247EE /* Model.xcdatamodeld in Sources */,
 				CFA8BAC9239EA592002247EE /* News+CoreDataProperties.swift in Sources */,
+				CFD6BC35239EC32100971491 /* DateFormatter.swift in Sources */,
 				CFA8BAC8239EA592002247EE /* News+CoreDataClass.swift in Sources */,
 				CFA8BAA5239E6C35002247EE /* NewsTableViewCell.swift in Sources */,
 				CFA8BAA7239E77B1002247EE /* NewsViewController.swift in Sources */,
