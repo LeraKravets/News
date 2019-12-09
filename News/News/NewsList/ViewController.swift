@@ -11,21 +11,29 @@ import UIKit
 class ViewController: UIViewController {
 
     // MARK: - Outlets
-
     @IBOutlet weak fileprivate var newsTableView: UITableView!
 
     // MARK: - Properties
-
     private let newsCellID = "NewsCellID"
+    private let newsVCID = "NewsVC"
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.newsTableView.dataSource = self
         self.newsTableView.delegate = self
     }
-
+    // MARK: - Helper methods
+    func goToNews() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let newsVC = storyboard.instantiateViewController(withIdentifier: newsVCID) as? NewsViewController else { return }
+//        newsVC.modalPresentationStyle = .fullScreen
+        self.present(newsVC, animated: true, completion: nil)
+    }
 
 }
+
+// MARK: - extension UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
@@ -41,8 +49,13 @@ extension ViewController: UITableViewDataSource {
 
 }
 
+// MARK: - extension UITableViewDelegate
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goToNews()
     }
 }
