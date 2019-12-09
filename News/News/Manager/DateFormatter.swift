@@ -11,12 +11,17 @@ import Foundation
 extension String {
 
     func timeFormatter() -> String {
+        var date: Date?
 
         let dateFormatter = DateFormatter()
         let tempLocale = dateFormatter.locale
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ" 
-        let date = dateFormatter.date(from: self)
+        date = dateFormatter.date(from: self)
+        if date == nil {
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+            date = dateFormatter.date(from: self)
+        }
         dateFormatter.dateFormat = "MMM d, yyyy HH:mm"
         dateFormatter.locale = tempLocale
         if let newsDate = date {
