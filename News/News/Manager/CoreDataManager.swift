@@ -56,7 +56,7 @@ class CoreDataManager {
             }
 
             news?.title = title
-            news?.date = date
+            news?.date = date?.timeFormatter()
             news?.descript = description
             news?.image = imageUrl
             news?.link = linkUrl
@@ -83,6 +83,8 @@ class CoreDataManager {
     // MARK: - Core Data Fetching method
     func fetchNewsInfo() -> [News] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        let sortByDate = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sortByDate]
         do {
             let item = try context.fetch(fetchRequest) as? [News]
             return item ?? []

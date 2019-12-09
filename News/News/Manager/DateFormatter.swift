@@ -17,7 +17,7 @@ extension String {
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ" 
         let date = dateFormatter.date(from: self)
-        dateFormatter.dateFormat = "MMM d, yyyy"
+        dateFormatter.dateFormat = "MMM d, yyyy HH:mm"
         dateFormatter.locale = tempLocale
         if let newsDate = date {
             let dateString = dateFormatter.string(from: newsDate)
