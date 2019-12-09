@@ -15,16 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MaE-Cj-gQC">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MaE-Cj-gQC">
+                                <rect key="frame" x="5" y="88" width="404" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCellID" rowHeight="100" id="r4M-se-E7b" customClass="NewsTableViewCell" customModule="News" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="404" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r4M-se-E7b" id="lZG-7o-YzL">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="404" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ZZ-Wp-UhQ">
@@ -34,16 +33,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5m-P6-dnZ">
-                                                    <rect key="frame" x="100" y="10" width="48" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="Grj-C3-uUr"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="100" y="10" width="294" height="55"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h30-9l-6sT">
-                                                    <rect key="frame" x="100" y="70" width="37.5" height="20"/>
+                                                    <rect key="frame" x="100" y="70" width="294" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="nxY-es-0FK"/>
                                                     </constraints>
@@ -53,9 +49,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="O5m-P6-dnZ" firstAttribute="leading" secondItem="1ZZ-Wp-UhQ" secondAttribute="trailing" constant="10" id="KTA-qW-f82"/>
+                                                <constraint firstItem="h30-9l-6sT" firstAttribute="top" secondItem="O5m-P6-dnZ" secondAttribute="bottom" constant="5" id="4M0-PP-m0B"/>
+                                                <constraint firstAttribute="trailing" secondItem="h30-9l-6sT" secondAttribute="trailing" constant="10" id="FuT-UF-Oje"/>
                                                 <constraint firstItem="1ZZ-Wp-UhQ" firstAttribute="centerY" secondItem="lZG-7o-YzL" secondAttribute="centerY" id="RMi-Bv-2lt"/>
                                                 <constraint firstItem="1ZZ-Wp-UhQ" firstAttribute="leading" secondItem="lZG-7o-YzL" secondAttribute="leading" constant="10" id="Ubu-FC-7fY"/>
+                                                <constraint firstItem="O5m-P6-dnZ" firstAttribute="leading" secondItem="1ZZ-Wp-UhQ" secondAttribute="trailing" constant="10" id="XzA-qT-SVi"/>
+                                                <constraint firstAttribute="trailing" secondItem="O5m-P6-dnZ" secondAttribute="trailing" constant="10" id="jBa-kI-efo"/>
                                                 <constraint firstItem="h30-9l-6sT" firstAttribute="bottom" secondItem="1ZZ-Wp-UhQ" secondAttribute="bottom" id="oaP-Gp-oUM"/>
                                                 <constraint firstItem="O5m-P6-dnZ" firstAttribute="top" secondItem="1ZZ-Wp-UhQ" secondAttribute="top" id="onG-79-mx5"/>
                                                 <constraint firstItem="h30-9l-6sT" firstAttribute="leading" secondItem="1ZZ-Wp-UhQ" secondAttribute="trailing" constant="10" id="sI1-cf-o7F"/>
@@ -72,6 +71,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MaE-Cj-gQC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="En1-RR-u83"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MaE-Cj-gQC" secondAttribute="trailing" constant="5" id="cCB-Ud-3Lj"/>
+                            <constraint firstItem="MaE-Cj-gQC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fiu-W8-u3s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MaE-Cj-gQC" secondAttribute="bottom" id="pwC-N2-qdv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="4m5-tL-5m1"/>
