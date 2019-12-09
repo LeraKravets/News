@@ -16,6 +16,9 @@
 		CFA8BAA5239E6C35002247EE /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAA4239E6C35002247EE /* NewsTableViewCell.swift */; };
 		CFA8BAA7239E77B1002247EE /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAA6239E77B1002247EE /* NewsViewController.swift */; };
 		CFA8BAAA239E85A5002247EE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAA9239E85A4002247EE /* NetworkManager.swift */; };
+		CFA8BAAD239E9459002247EE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAAB239E9459002247EE /* Model.xcdatamodeld */; };
+		CFA8BAB5239E965E002247EE /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAB3239E965E002247EE /* News+CoreDataClass.swift */; };
+		CFA8BAB6239E965E002247EE /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8BAB4239E965E002247EE /* News+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		CFA8BAA4239E6C35002247EE /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		CFA8BAA6239E77B1002247EE /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		CFA8BAA9239E85A4002247EE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CFA8BAAC239E9459002247EE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		CFA8BAB3239E965E002247EE /* News+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CFA8BAB4239E965E002247EE /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 				CFA8BA96239E6879002247EE /* Main.storyboard */,
 				CFA8BAA8239E7A0C002247EE /* NewsList */,
 				CFA8BAA6239E77B1002247EE /* NewsViewController.swift */,
+				CFA8BAB2239E964F002247EE /* Model */,
 				CFA8BA99239E687C002247EE /* Assets.xcassets */,
 				CFA8BA9B239E687C002247EE /* LaunchScreen.storyboard */,
 				CFA8BA9E239E687C002247EE /* Info.plist */,
@@ -82,6 +89,16 @@
 				CFA8BAA4239E6C35002247EE /* NewsTableViewCell.swift */,
 			);
 			path = NewsList;
+			sourceTree = "<group>";
+		};
+		CFA8BAB2239E964F002247EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFA8BAB3239E965E002247EE /* News+CoreDataClass.swift */,
+				CFA8BAB4239E965E002247EE /* News+CoreDataProperties.swift */,
+				CFA8BAAB239E9459002247EE /* Model.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +175,9 @@
 				CFA8BAAA239E85A5002247EE /* NetworkManager.swift in Sources */,
 				CFA8BA95239E6879002247EE /* ViewController.swift in Sources */,
 				CFA8BA91239E6879002247EE /* AppDelegate.swift in Sources */,
+				CFA8BAAD239E9459002247EE /* Model.xcdatamodeld in Sources */,
+				CFA8BAB6239E965E002247EE /* News+CoreDataProperties.swift in Sources */,
+				CFA8BAB5239E965E002247EE /* News+CoreDataClass.swift in Sources */,
 				CFA8BAA5239E6C35002247EE /* NewsTableViewCell.swift in Sources */,
 				CFA8BAA7239E77B1002247EE /* NewsViewController.swift in Sources */,
 				CFA8BA93239E6879002247EE /* SceneDelegate.swift in Sources */,
@@ -358,6 +378,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CFA8BAAB239E9459002247EE /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CFA8BAAC239E9459002247EE /* Model.xcdatamodel */,
+			);
+			currentVersion = CFA8BAAC239E9459002247EE /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CFA8BA85239E6879002247EE /* Project object */;
 }

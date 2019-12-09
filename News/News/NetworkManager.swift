@@ -11,12 +11,13 @@ import Foundation
 class NetworkManager {
 
     private let APIkey = "a3643541e6ba4c719d9b575075db5991"
+    private let language = "en"
 
     static let shared = NetworkManager()
     private init() {}
 
     func downloadNewsInfo(completionHandler: @escaping ([String: Any]?) -> Void) {
-        let resourceString = "https://newsapi.org/v2/sources?apiKey=\(APIkey)"
+        let resourceString = "https://newsapi.org/v2/top-headlines?language=\(language)&apiKey=\(APIkey)"
         guard let resourceURL = URL(string: resourceString) else {
                       completionHandler(nil)
                       return
