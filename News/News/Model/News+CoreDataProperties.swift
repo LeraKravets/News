@@ -17,10 +17,10 @@ extension News {
         return NSFetchRequest<News>(entityName: "News")
     }
 
-    @NSManaged public var title: String?
-    @NSManaged public var image: URL?
-    @NSManaged public var descript: String?
     @NSManaged public var date: String?
-    @NSManaged public var link: URL?
+    @NSManaged public var descript: String?
+    @NSManaged public var image: String?
+    @NSManaged public var link: String?
+    @NSManaged public var title: String?
 
 }
