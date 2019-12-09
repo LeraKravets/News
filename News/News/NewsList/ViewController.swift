@@ -40,9 +40,10 @@ class ViewController: UIViewController {
     }
 
 
-    func goToNews() {
+    func goToNews(newsInfo: News) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let newsVC = storyboard.instantiateViewController(withIdentifier: newsVCID) as? NewsViewController else { return }
+        newsVC.newsInfo = newsInfo
 //        newsVC.modalPresentationStyle = .fullScreen
         self.present(newsVC, animated: true, completion: nil)
     }
@@ -73,6 +74,6 @@ extension ViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        goToNews()
+        goToNews(newsInfo: newsInfo[indexPath.row])
     }
 }
