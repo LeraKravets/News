@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.newsTableView.dataSource = self
         self.newsTableView.delegate = self
+        navigationBarAppearace()
         newsTableView.refreshControl = refresher
         showActivityIndicatorView()
         loadNewsInfo()
@@ -60,6 +61,7 @@ class ViewController: UIViewController {
             textColor: nil)
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData, nil)
     }
+
     func hideActivityIndicatorView() {
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
     }
@@ -74,6 +76,12 @@ class ViewController: UIViewController {
                 self.hideActivityIndicatorView()
             }
         }
+    }
+
+    func navigationBarAppearace() {
+        self.navigationController?.navigationBar.barTintColor = .red
+        self.navigationController?.navigationBar.topItem?.title = "News"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 
     func goToNews(newsInfo: News) {
