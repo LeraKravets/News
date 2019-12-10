@@ -30,13 +30,5 @@ class NewsTableViewCell: UITableViewCell {
         titleLabel.text = newsInfo.title
         dateLabel.text = newsInfo.date
         newsSmallImage.imageFormatter(urlString: newsInfo.image)
-//        getImage(newsInfo.image)
     }
-
-//    func getImage(_ stringUrl: String?) {
-//        if let newsSmallImage = newsSmallImage, let stringUrl = stringUrl {
-//            let url = URL(string: stringUrl)
-//            newsSmallImage.sd_setImage(with: url, placeholderImage: nil)
-//        }
-//    }
 }

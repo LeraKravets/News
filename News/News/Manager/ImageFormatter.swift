@@ -11,10 +11,13 @@ import UIKit
 extension UIImageView {
 
     func imageFormatter(urlString: String?) {
+        self.layer.cornerRadius = 5
         if let urlString = urlString {
             let url = URL(string: urlString)
             self.sd_setImage(with: url, placeholderImage: nil)
-            self.layer.cornerRadius = 5
+        } else {
+            self.image = UIImage(named: "noImage")
+            print("no Image")
         }
     }
 }

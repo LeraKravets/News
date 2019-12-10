@@ -27,7 +27,6 @@ extension String {
         dateFormatter.locale = tempLocale
         if let newsDate = date {
             let dateString = dateFormatter.string(from: newsDate)
-            print("EXACT_DATE : \(dateString)")
             return dateString
         } else {
             return ""
