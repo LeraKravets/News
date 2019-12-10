@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 
     // MARK: - Properties
     private let newsCellID = "NewsCellID"
-    private let newsVCID = "NewsVC"
+    private let newsVCID = "NewsVCID"
     var newsInfo: [News] = CoreDataManager.shared.fetchNewsInfo()
 
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
