@@ -60,11 +60,8 @@ class CoreDataManager {
             news?.descript = description
             news?.image = imageUrl
             news?.link = linkUrl
-//            newsArray.append(news)
             saveContext()
         }
-//        print(newsArray)
-
     }
 
     // MARK: - Core Data Saving support
@@ -83,7 +80,7 @@ class CoreDataManager {
     // MARK: - Core Data Fetching method
     func fetchNewsInfo() -> [News] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
-        let sortByDate = NSSortDescriptor(key: "date", ascending: true)
+        let sortByDate = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortByDate]
         do {
             let item = try context.fetch(fetchRequest) as? [News]

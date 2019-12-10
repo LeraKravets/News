@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     private let newsVCID = "NewsVC"
     var newsInfo: [News] = CoreDataManager.shared.fetchNewsInfo()
 
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
+
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = UIColor.red
@@ -43,8 +47,8 @@ class ViewController: UIViewController {
         newsTableView.refreshControl = refresher
         showActivityIndicatorView()
         loadNewsInfo()
-
     }
+
     // MARK: - Helper methods
     func showActivityIndicatorView() {
         let activityData = ActivityData(
@@ -80,16 +84,15 @@ class ViewController: UIViewController {
 
     func navigationBarAppearace() {
         self.navigationController?.navigationBar.barTintColor = .red
-        self.navigationController?.navigationBar.topItem?.title = "News"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 
     func goToNews(newsInfo: News) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let newsVC = storyboard.instantiateViewController(withIdentifier: newsVCID) as? NewsViewController else { return }
         newsVC.newsInfo = newsInfo
-//        newsVC.modalPresentationStyle = .fullScreen
-        self.present(newsVC, animated: true, completion: nil)
+        newsVC.modalPresentationStyle = .fullScreen
+        self.self.navigationController?.pushViewController(newsVC, animated: true)
     }
 
 }

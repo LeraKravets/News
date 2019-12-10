@@ -15,7 +15,8 @@ extension String {
 
         let dateFormatter = DateFormatter()
         let tempLocale = dateFormatter.locale
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        var localTimeZoneIdentifier: String { return TimeZone.current.identifier }
+        dateFormatter.locale = Locale(identifier: localTimeZoneIdentifier)
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ" 
         date = dateFormatter.date(from: self)
         if date == nil {
