@@ -9,10 +9,12 @@
 import UIKit
 
 extension UIImageView {
+
     func imageFormatter(urlString: String?) {
         if let urlString = urlString {
             let url = URL(string: urlString)
             self.sd_setImage(with: url, placeholderImage: nil)
+            self.layer.cornerRadius = 5
         }
     }
 }
