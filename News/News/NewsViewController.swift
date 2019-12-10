@@ -31,12 +31,11 @@ class NewsViewController: UIViewController {
     
 
     func updateNewsInfo() {
-//        newsBigImage = newsInfo?.image
         dateLabel.text = newsInfo?.date
         titleLabel.text = newsInfo?.title
         descriptionTextView.text = newsInfo?.descript
+        newsBigImage.imageFormatter(urlString: newsInfo?.image)
         newsButton.setTitle(newsInfo?.link, for: .normal)
-//        linkToNewsBtn.titleLabel?.text = newsInfo?.link
     }
     @IBAction func newsButtonDidTapped(_ sender: Any) {
         if let urlString = newsInfo?.link, let url = URL(string: urlString)  {
