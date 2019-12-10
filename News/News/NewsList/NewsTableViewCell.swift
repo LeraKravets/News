@@ -12,13 +12,13 @@ class NewsTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
     @IBOutlet weak var newsSmallImage: UIImageView!
-    @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLbl.lineBreakMode = .byWordWrapping
-        titleLbl.numberOfLines = 0
+        titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.numberOfLines = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,8 +26,8 @@ class NewsTableViewCell: UITableViewCell {
     }
 
     func update(newsInfo: News) {
-        titleLbl.text = newsInfo.title
-        dateLbl.text = newsInfo.date
+        titleLabel.text = newsInfo.title
+        dateLabel.text = newsInfo.date
 
     }
 

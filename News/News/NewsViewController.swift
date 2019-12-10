@@ -12,27 +12,33 @@ class NewsViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var newsBigImage: UIImageView!
-    @IBOutlet weak var dateLbl: UILabel!
-    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var linkToNewsBtn: UIButton!
+    @IBOutlet weak var newsButton: UIButton!
 
     // MARK: - Properties
     var newsInfo: News?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLbl.lineBreakMode = .byWordWrapping
-        titleLbl.numberOfLines = 0
+        titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.numberOfLines = 0
         updateNewsInfo()
     }
     
 
     func updateNewsInfo() {
 //        newsBigImage = newsInfo?.image
-        dateLbl.text = newsInfo?.date
-        titleLbl.text = newsInfo?.title
+        dateLabel.text = newsInfo?.date
+        titleLabel.text = newsInfo?.title
         descriptionTextView.text = newsInfo?.descript
-        linkToNewsBtn.titleLabel?.text = newsInfo?.link
+        newsButton.setTitle(newsInfo?.link, for: .normal)
+//        linkToNewsBtn.titleLabel?.text = newsInfo?.link
+    }
+    @IBAction func newsButtonDidTapped(_ sender: Any) {
+        if let urlString = newsInfo?.link, let url = URL(string: urlString)  {
+            UIApplication.shared.open(url)
+        }
     }
 }
