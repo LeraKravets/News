@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class ViewController: UIViewController {
 
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
 
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = UIColor.darkGray
+        refreshControl.tintColor = UIColor.red
         refreshControl.addTarget(self, action: #selector(reloadTheData), for: .valueChanged)
         return refreshControl
     }()
@@ -39,10 +40,30 @@ class ViewController: UIViewController {
         self.newsTableView.dataSource = self
         self.newsTableView.delegate = self
         newsTableView.refreshControl = refresher
+        showActivityIndicatorView()
         loadNewsInfo()
 
     }
     // MARK: - Helper methods
+    func showActivityIndicatorView() {
+        let activityData = ActivityData(
+            size: nil,
+            message: nil,
+            messageFont: nil,
+            messageSpacing: nil,
+            type: .ballRotateChase,
+            color: .red,
+            padding: nil,
+            displayTimeThreshold: nil,
+            minimumDisplayTime: nil,
+            backgroundColor: UIColor.black.withAlphaComponent(0.4),
+            textColor: nil)
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData, nil)
+    }
+    func hideActivityIndicatorView() {
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
+    }
+
     func loadNewsInfo() {
         NetworkManager.shared.downloadNewsInfo { [weak self] (newsDict) in
             guard let self = self, let newsDict = newsDict else { return }
@@ -50,8 +71,8 @@ class ViewController: UIViewController {
             self.newsInfo = CoreDataManager.shared.fetchNewsInfo()
             DispatchQueue.main.async {
                 self.newsTableView.reloadData()
+                self.hideActivityIndicatorView()
             }
-
         }
     }
 

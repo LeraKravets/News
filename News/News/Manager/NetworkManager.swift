@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NVActivityIndicatorView
 
 class NetworkManager {
 
