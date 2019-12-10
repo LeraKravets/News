@@ -20,6 +20,8 @@ class NewsViewController: UIViewController {
     // MARK: - Properties
     var newsInfo: News?
 
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.lineBreakMode = .byWordWrapping

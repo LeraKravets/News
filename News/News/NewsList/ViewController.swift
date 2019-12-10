@@ -18,11 +18,27 @@ class ViewController: UIViewController {
     private let newsVCID = "NewsVC"
     var newsInfo: [News] = CoreDataManager.shared.fetchNewsInfo()
 
+    lazy var refresher: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.darkGray
+        refreshControl.addTarget(self, action: #selector(reloadTheData), for: .valueChanged)
+        return refreshControl
+    }()
+
+    @objc func reloadTheData() {
+        newsTableView.reloadData()
+        let deadline = DispatchTime.now() + .milliseconds(500)
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            self.refresher.endRefreshing()
+        }
+    }
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.newsTableView.dataSource = self
         self.newsTableView.delegate = self
+        newsTableView.refreshControl = refresher
         loadNewsInfo()
 
     }
@@ -38,7 +54,6 @@ class ViewController: UIViewController {
 
         }
     }
-
 
     func goToNews(newsInfo: News) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
