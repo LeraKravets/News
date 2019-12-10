@@ -19,10 +19,6 @@ class ViewController: UIViewController {
     private let newsVCID = "NewsVCID"
     var newsInfo: [News] = CoreDataManager.shared.fetchNewsInfo()
 
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
-
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = UIColor.red
